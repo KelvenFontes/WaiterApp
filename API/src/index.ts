@@ -6,7 +6,7 @@ import { router } from './router';
 
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017')
+mongoose.connect(`mongodb+srv://Kelven:Kelven08@waiterappdb.omocnle.mongodb.net/test`)
   .then(()=> {
     const app = express();
     const port = 3001;
