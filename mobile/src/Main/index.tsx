@@ -33,9 +33,11 @@ export function Main() {
       api.get('/categories'),
       api.get('/products'),
     ]).then(([categoriesResponse, productsResponse]) => {
+
       setCategories(categoriesResponse.data);
       setProducts(productsResponse.data);
       setIsLoading(false);
+
     });
   }, []);
 
@@ -48,6 +50,7 @@ export function Main() {
 
     setProducts(data);
     setIsLoadingProducts(false);
+
   }
 
   function handleSaveTable(table: string) {
@@ -121,13 +124,11 @@ export function Main() {
           onCancelOrder={handleResetOrder}
         />
 
-        {isLoading && (
+        {isLoading ? (
           <CenteredCotainer>
             <ActivityIndicator color='#d73035' size="large" />
           </CenteredCotainer>
-        )}
-
-        {!isLoading && (
+        ) : (
           <>
             <CategoriesContainer>
               <Categories
@@ -160,7 +161,7 @@ export function Main() {
             )}
 
           </>
-        )}
+        )};
       </Container>
 
       <Footer>
@@ -179,6 +180,7 @@ export function Main() {
               onAdd={handleAddToCart}
               onDecrement={handleDecrementCartItem}
               onConfirmOrder={handleResetOrder}
+              selectedTable={selectedTable}
             />
           )}
         </FooterContainer>
