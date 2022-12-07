@@ -12,11 +12,9 @@ interface ButtonProps {
 export function Button({ label, onPress, disabled, loading }: ButtonProps) {
   return (
     <Container onPress={onPress} disabled={disabled || loading}>
-      {!loading && (
+      {!loading ? (
         <Text weight='600' color='#fff'>{label}</Text>
-      )}
-
-      {loading && (
+      ) : (
         <ActivityIndicator color='#fff'/>
       )}
     </Container>

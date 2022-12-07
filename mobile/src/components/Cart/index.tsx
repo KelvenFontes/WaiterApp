@@ -33,16 +33,14 @@ export function Cart({ cartItems, onAdd, onDecrement, onConfirmOrder, selectedTa
   async function handleConfirmOrder(){
     setIsLoading(true);
 
-    const payload = {
+    await api.post('/orders', {
       table: selectedTable,
       products: cartItems.map((cartItem) => ({
         product: cartItem.product._id,
         quantity: cartItem.quantity,
       })),
-    };
+    });
 
-    await api.post('/orders', payload);
-    
     setIsLoading(false);
     setIsModalVisible(true);
   }
@@ -70,7 +68,7 @@ export function Cart({ cartItems, onAdd, onDecrement, onConfirmOrder, selectedTa
               <ProductContainer>
                 <Image
                   source={{
-                    uri: `http://44.212.57.196:3001/uploads/${CartItem.product.imagePath}`
+                    uri: `http://192.168.0.103:3001/uploads/${CartItem.product.imagePath}`
                   }}
                 />
 

@@ -16,7 +16,7 @@ export function Categories({ categories, onSelectCategory }: CategoriesProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
 
   function handleSelectCategory(categoryId: string) {
-    const category = selectedCategory === categoryId ? '' :categoryId;
+    const category = selectedCategory == categoryId ? '' :categoryId;
 
     onSelectCategory(category);
     setSelectedCategory(category);
