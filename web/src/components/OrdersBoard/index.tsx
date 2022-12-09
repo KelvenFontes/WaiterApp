@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import { Order } from '../../types/Order';
 import { api } from '../../utils/api';
 import { OrderModal } from '../OrderModal';
-import { Orders } from '../Orders';
 import { Board, OrdersContainer } from './styles';
 
 interface OrdersBoardProps {
@@ -39,7 +38,7 @@ export function OrdersBoard({ icon, title, orders, onCancelOrder, onChangeOrderS
 
     await api.patch(`/orders/${selectedOrder?._id}`, { status: newStatus });
 
-    toast.success(`O pedido da mesa ${selectedOrder?._table} teve o status alterado para ${newStatus}`);
+    toast.success(`O pedido da mesa ${selectedOrder?.table} teve o status alterado para ${newStatus}`);
     onChangeOrderStatus(selectedOrder!._id, newStatus);
     setIsLoading(false);
     setIsModalVisible(false);
@@ -49,9 +48,8 @@ export function OrdersBoard({ icon, title, orders, onCancelOrder, onChangeOrderS
   async function handleCancelOrder() {
     setIsLoading(true);
 
-    await api.delete(`/order/${selectedOrder?._id}`);
-
-    toast.success(`O pedido da mesa ${selectedOrder?._table} foi cancelado!`);
+    await api.delete(`/orders/${selectedOrder?._id}`);
+    toast.success(`O pedido da mesa ${selectedOrder?.table} foi cancelado!`);
     onCancelOrder(selectedOrder!._id);
     setIsLoading(false);
     setIsModalVisible(false);
@@ -78,7 +76,7 @@ export function OrdersBoard({ icon, title, orders, onCancelOrder, onChangeOrderS
         <OrdersContainer>
           {orders.map((order) => (
             <button type="button" key={order._id} onClick={() => handleOpenModal(order)}>
-              <strong>Mesa {order._table}</strong>
+              <strong>Mesa {order.table}</strong>
               <span>{order.products.length} itens</span>
             </button>
           ))}

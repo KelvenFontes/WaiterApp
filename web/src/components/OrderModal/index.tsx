@@ -26,7 +26,7 @@ export function OrderModal({ visible, order, onClose, onCancelOrder, isLoading, 
     <Overlay>
       <ModalBody>
         <header>
-          <strong>Mesa {order._table}</strong>
+          <strong>Mesa {order.table}</strong>
 
           <button type="button" onClick={onClose}>
             <img src={closeIcon} alt="Icone de fechar" />
