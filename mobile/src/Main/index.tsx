@@ -3,7 +3,7 @@ import { Container, CategoriesContainer, MenuContainer, Footer, FooterContainer,
 import { Header } from '../components/Header';
 import { Categories } from '../components/Categories';
 import { Menu } from '../components/Menu';
-import { Button } from '../components/Button';
+import { Button } from '../components/Button/index';
 import { TableModal } from '../components/TableModal';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -27,6 +27,7 @@ export function Main() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(false);
 
+
   useEffect(() => {
 
     Promise.all([
@@ -37,6 +38,7 @@ export function Main() {
       setProducts(productsResponse.data);
       setIsLoading(false);
     });
+
   }, []);
 
   async function handleSelectCategory(categoryId: string) {
@@ -68,7 +70,7 @@ export function Main() {
     setCartItems((prevState) => {
       const itemIndex = prevState.findIndex(cartItem => cartItem.product._id == product._id);
 
-      if(itemIndex < 0){
+      if (itemIndex < 0) {
         return prevState.concat({
           quantity: 1,
           product,

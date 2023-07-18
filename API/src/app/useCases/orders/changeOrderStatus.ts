@@ -12,8 +12,6 @@ export async function changeOrderStatus(req: Request, res: Response){
       });
     }
 
-    await Order.findByIdAndUpdate(orderId, { status });
-
     res.sendStatus(204);
   } catch(error) {
     console.log(error);

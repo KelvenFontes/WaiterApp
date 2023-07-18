@@ -18,7 +18,6 @@ mongoose.connect(`mongodb+srv://Kelven:Kelven08@waiterappdb.omocnle.mongodb.net/
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Methods', '*');
       res.setHeader('Access-Control-Allow-Headers', '*');
-
       next();
     });
 
