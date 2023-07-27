@@ -38,7 +38,7 @@ A aplicação tem como objetivo auxiliar restaurantes no controle dos pedidos fe
 
 ## 🚀 Desenvolvido com:
 
-💻 #Frontend:
+💻 __Frontend:__
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -46,7 +46,7 @@ A aplicação tem como objetivo auxiliar restaurantes no controle dos pedidos fe
 
 ---
 
-🏭 __Backend__ :
+🏭 __Backend:__
 
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
@@ -55,7 +55,7 @@ A aplicação tem como objetivo auxiliar restaurantes no controle dos pedidos fe
 
 ---
 
-📱 __Mobile__ :
+📱 __Mobile:__
 
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
