@@ -10,7 +10,7 @@ WaiterApp é um aplicativo desenvolvido especialmente para garçons, permitindo 
 
 A aplicação tem como objetivo auxiliar restaurantes no controle dos pedidos feitos pelos clientes, proporcionando a eles a facilidade de realizar pedidos por meio do aplicativo, que são automaticamente enviados para um painel de controle web em tempo real.
 
-## :computer: Competências Adquiridas
+## :computer: Funcionalidades:
 
 #### 🌐 Frontend:
 
