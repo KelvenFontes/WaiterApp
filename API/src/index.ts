@@ -6,11 +6,14 @@ import { Server } from 'socket.io';
 
 import { router } from './router';
 
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASS;
+
 const app = express();
 const server = http.createServer(app);
 export const io = new Server(server);
 
-mongoose.connect(`mongodb+srv://Kelven:Kelven08@waiterappdb.omocnle.mongodb.net/test`)
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@waiterappdb.omocnle.mongodb.net/test`)
   .then(()=> {
     const port = 3001;
 
